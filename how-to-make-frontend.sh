@@ -129,3 +129,7 @@ echo '#!/bin/sh' >> .husky/pre-commit
 echo '. "$(dirname "$0")/_/husky.sh"' >> .husky/pre-commit
 echo '' >> .husky/pre-commit
 echo 'npx lint-staged && echo "[Husky] pre-commit"' >> .husky/pre-commit
+
+# Add craco packages
+yarn add @craco/craco
+yarn add -D craco-alias
