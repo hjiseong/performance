@@ -51,3 +51,9 @@ echo ".serverless/" >> .gitignore
 echo ".fusebox/" >> .gitignore
 echo ".dynamodb/" >> .gitignore
 echo ".tern-port" >> .gitignore
+
+# Add packages
+yarn add react
+yarn add react-dom
+yarn add react-router-dom
+yarn add react-scripts
