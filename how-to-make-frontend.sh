@@ -109,3 +109,23 @@ touch .eslintignore
 echo 'node_modules/*' >> .eslintignore
 echo 'dist/*' >> .eslintignore
 echo 'asset/* ' >> .eslintignore
+
+# Add precommit hook packages
+yarn add husky
+yarn add lint-staged
+
+# Add lint-staged config file
+touch .lintstagedrc.json
+echo '{' >> .lintstagedrc.json
+echo '  "src/**/*.{js,ts,tsx}": ["eslint --fix"],' >> .lintstagedrc.json
+echo '  "src/**": ["prettier --write ."]' >> .lintstagedrc.json
+echo '}' >> .lintstagedrc.json
+
+# Add husky config file
+mkdir .husky
+touch .husky/.gitignore
+touch .husky/pre-commit
+echo '#!/bin/sh' >> .husky/pre-commit
+echo '. "$(dirname "$0")/_/husky.sh"' >> .husky/pre-commit
+echo '' >> .husky/pre-commit
+echo 'npx lint-staged && echo "[Husky] pre-commit"' >> .husky/pre-commit
