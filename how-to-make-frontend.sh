@@ -57,3 +57,9 @@ yarn add react
 yarn add react-dom
 yarn add react-router-dom
 yarn add react-scripts
+
+# Add typescript packages
+yarn add -D typescript
+yarn add -D @types/react
+yarn add -D @types/react-dom
+yarn add -D @types/react-router-dom
