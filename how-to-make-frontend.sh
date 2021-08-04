@@ -99,9 +99,11 @@ echo '  },' >> .eslintrc.js
 echo '  extends: [' >> .eslintrc.js
 echo '    "plugin:react/recommended",' >> .eslintrc.js
 echo '    "plugin:@typescript-eslint/recommended",' >> .eslintrc.js
-echo '    "prettier/@typescript-eslint",' >> .eslintrc.js
 echo '    "plugin:prettier/recommended",' >> .eslintrc.js
 echo '  ],' >> .eslintrc.js
+echo '  rules: {' >> .eslintrc.js
+echo '    "prettier/prettier": 0' >> .eslintrc.js
+echo '  }' >> .eslintrc.js
 echo '};' >> .eslintrc.js
 
 # Add eslintignore file
@@ -255,3 +257,48 @@ echo '    "tsc": "rm -rf dist && tsc --project ./tsconfig.dist.json",' >> packag
 echo '    "prepare": "husky install"' >> packagesample.json
 sed '1,7d' package.json >> packagesample.json
 mv packagesample.json package.json
+
+# Add project folders
+mkdir src
+mkdir src/apis
+mkdir src/common
+mkdir src/components
+mkdir src/hooks
+mkdir src/layouts
+mkdir src/pages
+mkdir src/store
+
+# Add react-app-env.d.ts file
+touch src/react-app-env.d.ts
+echo '/// <reference types="react-scripts" />' >> src/react-app-env.d.ts
+
+# Add src/index.tsx file
+touch src/index.tsx
+echo 'import React from "react";' >> src/index.tsx
+echo 'import ReactDOM from "react-dom";' >> src/index.tsx
+echo 'import App from "./App";' >> src/index.tsx
+echo '' >> src/index.tsx
+echo 'ReactDOM.render(' >> src/index.tsx
+echo '  <React.StrictMode>' >> src/index.tsx
+echo '    <App />' >> src/index.tsx
+echo '  </React.StrictMode>,' >> src/index.tsx
+echo '  document.getElementById("root")' >> src/index.tsx
+echo ');' >> src/index.tsx
+
+# Add src/App.tsx file
+touch src/App.tsx
+echo 'import React, { ReactElement } from "react";' >> src/App.tsx
+echo 'import { Route, HashRouter } from "react-router-dom";' >> src/App.tsx
+echo 'import dotenv from "dotenv";' >> src/App.tsx
+echo 'dotenv.config();' >> src/App.tsx
+echo '' >> src/App.tsx
+echo 'const repository = "template-react";' >> src/App.tsx
+echo '' >> src/App.tsx
+echo 'export default function App(): ReactElement {' >> src/App.tsx
+echo '  return (' >> src/App.tsx
+echo '    <HashRouter basename={repository}>' >> src/App.tsx
+echo '      <Route exact path="/" component={() => <>Home</>} />' >> src/App.tsx
+echo '      <Route path="/login" component={() => <>Login</>} />' >> src/App.tsx
+echo '    </HashRouter>' >> src/App.tsx
+echo '  );' >> src/App.tsx
+echo '}' >> src/App.tsx
