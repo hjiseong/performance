@@ -99,9 +99,11 @@ echo '  },' >> .eslintrc.js
 echo '  extends: [' >> .eslintrc.js
 echo '    "plugin:react/recommended",' >> .eslintrc.js
 echo '    "plugin:@typescript-eslint/recommended",' >> .eslintrc.js
-echo '    "prettier/@typescript-eslint",' >> .eslintrc.js
 echo '    "plugin:prettier/recommended",' >> .eslintrc.js
 echo '  ],' >> .eslintrc.js
+echo '  rules: {' >> .eslintrc.js
+echo '    "prettier/prettier": 0' >> .eslintrc.js
+echo '  }' >> .eslintrc.js
 echo '};' >> .eslintrc.js
 
 # Add eslintignore file
