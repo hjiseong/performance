@@ -69,3 +69,14 @@ yarn add prettier
 
 # Add prettier config file
 touch .prettierrc
+
+# Add eslint package
+yarn add eslint
+
+# Add eslint-prettier package
+yarn add eslint-config-prettier
+yarn add eslint-plugin-prettier
+
+# Add typescript eslint helper package
+yarn add -D @typescript-eslint/eslint-plugin
+yarn add -D @typescript-eslint/parser
