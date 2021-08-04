@@ -69,3 +69,43 @@ yarn add prettier
 
 # Add prettier config file
 touch .prettierrc
+
+# Add eslint package
+yarn add eslint
+
+# Add eslint-prettier package
+yarn add eslint-config-prettier
+yarn add eslint-plugin-prettier
+
+# Add typescript eslint helper package
+yarn add -D @typescript-eslint/eslint-plugin
+yarn add -D @typescript-eslint/parser
+
+# Add eslint config file
+touch .eslintrc.js
+echo 'module.exports = {' >> .eslintrc.js
+echo '  parser: "@typescript-eslint/parser",' >> .eslintrc.js
+echo '  parserOptions: {' >> .eslintrc.js
+echo '    sourceType: "module",' >> .eslintrc.js
+echo '    ecmaFeatures: {' >> .eslintrc.js
+echo '      jsx: true,' >> .eslintrc.js
+echo '    },' >> .eslintrc.js
+echo '  },' >> .eslintrc.js
+echo '  settings: {' >> .eslintrc.js
+echo '    react: {' >> .eslintrc.js
+echo '      version: "detect",' >> .eslintrc.js
+echo '    },' >> .eslintrc.js
+echo '  },' >> .eslintrc.js
+echo '  extends: [' >> .eslintrc.js
+echo '    "plugin:react/recommended",' >> .eslintrc.js
+echo '    "plugin:@typescript-eslint/recommended",' >> .eslintrc.js
+echo '    "prettier/@typescript-eslint",' >> .eslintrc.js
+echo '    "plugin:prettier/recommended",' >> .eslintrc.js
+echo '  ],' >> .eslintrc.js
+echo '};' >> .eslintrc.js
+
+# Add eslintignore file
+touch .eslintignore
+echo 'node_modules/*' >> .eslintignore
+echo 'dist/*' >> .eslintignore
+echo 'asset/* ' >> .eslintignore
