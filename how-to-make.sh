@@ -1,14 +1,8 @@
 # Initialize project
 npm init -y
 
-# Create frontend folder
-mkdir frontend
-cd frontend
-npm init -y
+# Create backend project
+sh ./how-to-make-backend.sh
 
-# Create backend folder
-mkdir backend
-cd ../backend
-npm init -y
-cd ../
-
+# Create frontend project
+sh ./how-to-make-frontend.sh
