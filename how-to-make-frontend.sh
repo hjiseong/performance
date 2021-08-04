@@ -242,3 +242,16 @@ echo '  "display": "standalone",' >> public/manifest.json
 echo '  "theme_color": "#000000",' >> public/manifest.json
 echo '  "background_color": "#ffffff"' >> public/manifest.json
 echo '}' >> public/manifest.json
+
+# Add package.json script
+sed '7,1000d' package.json >> packagesample.json
+echo '    "start": "craco start",' >> packagesample.json
+echo '    "build": "craco build",' >> packagesample.json
+echo '    "test": "craco test",' >> packagesample.json
+echo '    "lint": "eslint \"**/*.{js,ts,tsx}\" --fix",' >> packagesample.json
+echo '    "predeploy": "yarn build",' >> packagesample.json
+echo '    "deploy": "gh-pages -d build",' >> packagesample.json
+echo '    "tsc": "rm -rf dist && tsc --project ./tsconfig.dist.json",' >> packagesample.json
+echo '    "prepare": "husky install"' >> packagesample.json
+sed '1,7d' package.json >> packagesample.json
+mv packagesample.json package.json
