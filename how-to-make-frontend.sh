@@ -129,3 +129,68 @@ echo '#!/bin/sh' >> .husky/pre-commit
 echo '. "$(dirname "$0")/_/husky.sh"' >> .husky/pre-commit
 echo '' >> .husky/pre-commit
 echo 'npx lint-staged && echo "[Husky] pre-commit"' >> .husky/pre-commit
+
+# Add craco packages
+yarn add @craco/craco
+yarn add -D craco-alias
+
+# Add craco config file
+touch craco.config.js
+echo 'module.exports = {' >> craco.config.js
+echo '  plugins: [' >> craco.config.js
+echo '    {' >> craco.config.js
+echo '      plugin: require("craco-alias"),' >> craco.config.js
+echo '      options: {' >> craco.config.js
+echo '        source: "tsconfig",' >> craco.config.js
+echo '        baseUrl: ".",' >> craco.config.js
+echo '        tsConfigPath: "tsconfig.paths.json",' >> craco.config.js
+echo '        debug: false,' >> craco.config.js
+echo '      },' >> craco.config.js
+echo '    },' >> craco.config.js
+echo '  ],' >> craco.config.js
+echo '};' >> craco.config.js
+
+# Add typescript config file
+touch tsconfig.json
+echo '{' >> tsconfig.json
+echo '  "extends": "./tsconfig.paths.json",' >> tsconfig.json
+echo '  "compilerOptions": {' >> tsconfig.json
+echo '    "target": "es5",' >> tsconfig.json
+echo '    "module": "esnext",' >> tsconfig.json
+echo '    "jsx": "react-jsx",' >> tsconfig.json
+echo '    "outDir": "dist",' >> tsconfig.json
+echo '    "strict": true,' >> tsconfig.json
+echo '    "esModuleInterop": true,' >> tsconfig.json
+echo '    "skipLibCheck": true,' >> tsconfig.json
+echo '    "forceConsistentCasingInFileNames": true,' >> tsconfig.json
+echo '    "declaration": true,' >> tsconfig.json
+echo '    "lib": ["dom", "dom.iterable", "esnext"],' >> tsconfig.json
+echo '    "allowJs": true,' >> tsconfig.json
+echo '    "allowSyntheticDefaultImports": true,' >> tsconfig.json
+echo '    "noFallthroughCasesInSwitch": true,' >> tsconfig.json
+echo '    "moduleResolution": "node",' >> tsconfig.json
+echo '    "resolveJsonModule": true,' >> tsconfig.json
+echo '    "isolatedModules": true,' >> tsconfig.json
+echo '    "noEmit": true' >> tsconfig.json
+echo '  },' >> tsconfig.json
+echo '  "include": ["src", "craco.config.js"],' >> tsconfig.json
+echo '  "exclude": ["node_modules", "dist"]' >> tsconfig.json
+echo '}' >> tsconfig.json
+
+# Add tyupescript path alias file
+touch tsconfig.paths.json
+echo '{' >> tsconfig.paths.json
+echo '  "compilerOptions": {' >> tsconfig.paths.json
+echo '    "baseUrl": ".",' >> tsconfig.paths.json
+echo '    "paths": {' >> tsconfig.paths.json
+echo '      "@src/*": ["src/*"],' >> tsconfig.paths.json
+echo '      "@apis/*": ["src/apis/*"],' >> tsconfig.paths.json
+echo '      "@common/*": ["src/common/*"],' >> tsconfig.paths.json
+echo '      "@components/*": ["src/components/*"],' >> tsconfig.paths.json
+echo '      "@hooks/*": ["src/hooks/*"],' >> tsconfig.paths.json
+echo '      "@layouts/*": ["src/layouts/*"],' >> tsconfig.paths.json
+echo '      "@pages/*": ["src/pages/*"],' >> tsconfig.paths.json
+echo '      "@store/*": ["src/store/*"]' >> tsconfig.paths.json
+echo '    }' >> tsconfig.paths.json
+echo '  }' >> tsconfig.paths.json
+echo '}' >> tsconfig.paths.json
