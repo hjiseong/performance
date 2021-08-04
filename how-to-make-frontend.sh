@@ -103,3 +103,9 @@ echo '    "prettier/@typescript-eslint",' >> .eslintrc.js
 echo '    "plugin:prettier/recommended",' >> .eslintrc.js
 echo '  ],' >> .eslintrc.js
 echo '};' >> .eslintrc.js
+
+# Add eslintignore file
+touch .eslintignore
+echo 'node_modules/*' >> .eslintignore
+echo 'dist/*' >> .eslintignore
+echo 'asset/* ' >> .eslintignore
