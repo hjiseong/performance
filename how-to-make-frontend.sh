@@ -63,3 +63,9 @@ yarn add -D typescript
 yarn add -D @types/react
 yarn add -D @types/react-dom
 yarn add -D @types/react-router-dom
+
+# Add prettier package
+yarn add prettier
+
+# Add prettier config file
+touch .prettierrc
