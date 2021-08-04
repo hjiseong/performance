@@ -194,3 +194,9 @@ echo '      "@store/*": ["src/store/*"]' >> tsconfig.paths.json
 echo '    }' >> tsconfig.paths.json
 echo '  }' >> tsconfig.paths.json
 echo '}' >> tsconfig.paths.json
+
+# Add environment package
+yarn add dotenv
+
+# Add environment sample format file
+touch .env.sample
