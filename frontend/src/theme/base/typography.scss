@@ -1,0 +1,104 @@
+// Roboto - 100, 300, 400, 500, 700, 900
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+// Noto Sans KR - 100, 300, 400, 500, 700, 900
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+// Font List
+$Roboto: "Roboto", sans-serif;
+$Noto-Sans-KR: "Noto Sans KR", sans-serif;
+
+// Project Font
+$font-family: $Roboto;
+
+// Design System - Typography
+@mixin typo-heading-1 {
+  font-family: $font-family;
+  font-weight: 300;
+  font-size: 96px;
+  letter-spacing: -1.5px;
+}
+
+@mixin typo-heading-2 {
+  font-family: $font-family;
+  font-weight: 300;
+  font-size: 60px;
+  letter-spacing: -0.5px;
+}
+
+@mixin typo-heading-3 {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 48px;
+  letter-spacing: 0px;
+}
+
+@mixin typo-heading-4 {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 34px;
+  letter-spacing: 0.25px;
+}
+
+@mixin typo-heading-5 {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: 0px;
+}
+
+@mixin typo-heading-6 {
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.15px;
+}
+
+@mixin typo-subtitle-1 {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.15px;
+}
+
+@mixin typo-subtitle-2 {
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+}
+
+@mixin typo-body-1 {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+@mixin typo-body-2 {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+}
+
+@mixin typo-button {
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1.25px;
+}
+
+@mixin typo-caption {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+}
+
+@mixin typo-overline {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
