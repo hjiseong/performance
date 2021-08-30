@@ -1,5 +1,6 @@
+import "./theme/index.scss";
 import React, { ReactElement } from "react";
-import { Route, HashRouter } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 import dotenv from "dotenv";
 import Home from "@pages/Home";
 import Login from "@pages/Login";
@@ -13,11 +14,10 @@ import GameList from "@pages/GameList";
 import GameDetail from "@pages/GameDetail";
 
 dotenv.config();
-const repository = "template-react";
 
 export default function App(): ReactElement {
   return (
-    <HashRouter basename={repository}>
+    <BrowserRouter>
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/dashboard" component={Login} />
@@ -33,6 +33,6 @@ export default function App(): ReactElement {
 
       <Route exact path="/webtoon" component={WebtoonList} />
       <Route path="/webtoon/:id" component={WebtoonDetail} />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
