@@ -17,7 +17,7 @@ dotenv.config();
 
 export default function App(): ReactElement {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="performance">
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/dashboard" component={Login} />
