@@ -108,6 +108,7 @@ section {
 body {
   line-height: 1;
   background-color: $green;
+  font-family: $font-family;
 }
 ol,
 ul {
@@ -127,4 +128,31 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+html {
+  font-size: 65%;
+  font-variant-ligatures: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.green {
+    background-color: $green;
+  }
+  &.blue {
+    background-color: $blue;
+  }
+}
+
+@mixin container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
