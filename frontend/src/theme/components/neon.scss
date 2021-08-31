@@ -1,0 +1,56 @@
+@import url(//fonts.googleapis.com/css?family=Vibur);
+
+$neon-color: #ffef0f;
+$neon-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em $neon-color, 0 0 0.5em $neon-color,
+  0 0 0.1em $neon-color, 0 10px 3px #000;
+
+$blink-animation-2: blink linear infinite 2s;
+$blink-animation-3: blink linear infinite 3s;
+
+.neon {
+  color: #fee;
+  text-shadow: $neon-shadow;
+  font: 400 19vh "Vibur";
+  user-select: none;
+}
+
+.blink-2s {
+  animation: $blink-animation-2;
+}
+
+.blink-3s {
+  animation: $blink-animation-3;
+}
+
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79% {
+    color: #333;
+  }
+  80% {
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
