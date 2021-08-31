@@ -1,0 +1,28 @@
+$in: 0.25s $ease-out trace-in forwards;
+$out: 0.25s $ease-out trace-out forwards;
+$active: 0s $ease-out trace-out forwards;
+
+.line-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.1rem;
+    background-color: currentColor;
+    transform: translateX(calc(-100% - 0.1rem));
+    animation-delay: 0;
+    @include prefix(animation, $out, webkit);
+  }
+  &:hover:after {
+    @include prefix(animation, $in, webkit);
+  }
+  &.active:after {
+    @include prefix(animation, $active, webkit);
+  }
+}
