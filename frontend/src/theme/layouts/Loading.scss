@@ -1,0 +1,30 @@
+.loading {
+  position: absolute;
+  background-color: #5cdb95;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .box {
+    overflow: hidden;
+  }
+
+  .text {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 100px;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    padding-bottom: 20px;
+    @include prefix(
+      animation,
+      (
+        fade-out 0.8s $ease-out-soft 2.5s forwards,
+        translate-up-100 0.8s $ease-out-soft 2.5s
+      ),
+      webkit o ms
+    );
+  }
+}
