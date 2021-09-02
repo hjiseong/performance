@@ -1,0 +1,97 @@
+.cookie-banner-section {
+  @include section;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $blue;
+  animation: translate-up-0 0.5s $ease-out-soft;
+  &.close {
+    animation: translate-down-100 0.5s $ease-out-soft;
+    transform: translateY(100%);
+  }
+}
+
+.cookie-banner-container {
+  @include container;
+  position: relative;
+  color: $white;
+  flex-direction: row;
+  padding: 0 2.4vw 0 5.4vw;
+  height: 60px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: bold;
+  max-width: none;
+}
+
+.description {
+  max-width: 280px;
+  margin-right: auto;
+  flex: 1;
+  font-size: 1.2rem;
+  @include mobile {
+    font-size: 1rem;
+    max-width: 150px;
+  }
+}
+
+.policy-link {
+  color: $white;
+  margin-left: 3px;
+}
+
+.accept-cookie {
+  padding: 0.2rem 3rem 0;
+  position: relative;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+  border: none;
+  color: $white;
+  box-shadow: 0 0 0 1px $white;
+  border-radius: 50px;
+  text-transform: uppercase;
+  outline: 0;
+  overflow: hidden;
+  background: none;
+  line-height: 2.8rem;
+  z-index: 1;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.accept-cookie:hover {
+  color: $blue;
+  transition: color $ease-in-soft 0.3s;
+}
+
+.accept-cookie:before {
+  content: "";
+  position: absolute;
+  background: $white;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+  transition: all 0.3s;
+}
+
+.accept-cookie:hover:before {
+  top: 0;
+  transition: top $ease-in-soft 0.3s;
+}
+
+.cookie-banner-close {
+  outline: none;
+  border: none;
+  background: none;
+  color: $white;
+  position: absolute;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+}

@@ -1,7 +1,5 @@
 import React, { ReactElement } from "react";
 
-interface Props {}
-
-export default function WebtoonList({}: Props): ReactElement {
+export default function WebtoonList(): ReactElement {
   return <div></div>;
 }

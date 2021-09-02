@@ -1,7 +1,5 @@
 import React, { ReactElement } from "react";
 
-interface Props {}
-
-export default function ProductList({}: Props): ReactElement {
+export default function ProductList(): ReactElement {
   return <div></div>;
 }

@@ -1,7 +1,5 @@
 import React, { ReactElement } from "react";
 
-interface Props {}
-
-export default function PostList({}: Props): ReactElement {
+export default function PostList(): ReactElement {
   return <div></div>;
 }

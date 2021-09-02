@@ -1,0 +1,39 @@
+@mixin word($delay) {
+  @include typo-heading-1;
+  position: relative;
+  padding-right: 0.025em;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 0.9;
+  font-size: 6.25vw;
+  @include mobile {
+    font-size: 4.6rem;
+  }
+  & > span {
+    @include tranlate-up-title;
+    display: inline-block;
+    transform: translateY(103%);
+    animation-delay: $delay;
+    font-weight: bold;
+    color: $blue;
+  }
+}
+
+.word-1 {
+  @include word(0.6s);
+}
+.word-2 {
+  @include word(0.8s);
+}
+
+.contents-section {
+  padding: calc(1.5rem + 2.5vw) 5.4vw;
+  box-sizing: border-box;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(5rem + 5vw);
+  padding-top: 5rem;
+}

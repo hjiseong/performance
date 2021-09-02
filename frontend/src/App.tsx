@@ -2,7 +2,7 @@ import "./theme/index.scss";
 import React, { ReactElement } from "react";
 import { Route, BrowserRouter } from "react-router-dom";
 import dotenv from "dotenv";
-import Home from "@pages/Home";
+import Home from "@src/pages/Home";
 import Login from "@pages/Login";
 import PostList from "@pages/PostList";
 import PostDetail from "@pages/PostDetail";

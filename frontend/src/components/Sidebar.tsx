@@ -1,8 +1,5 @@
-import "./Sidebar.scss";
 import React, { ReactElement } from "react";
 
-interface Props {}
-
-export default function Sidebar({}: Props): ReactElement {
+export default function Sidebar(): ReactElement {
   return <div></div>;
 }
