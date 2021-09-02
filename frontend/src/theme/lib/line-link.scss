@@ -1,6 +1,5 @@
 $in: 0.25s $ease-out trace-in forwards;
 $out: 0.25s $ease-out trace-out forwards;
-$active: 0s $ease-out trace-out forwards;
 
 .line-link {
   position: relative;
@@ -23,6 +22,6 @@ $active: 0s $ease-out trace-out forwards;
     @include prefix(animation, $in, webkit);
   }
   &.active:after {
-    @include prefix(animation, $active, webkit);
+    @include prefix(animation, $in, webkit);
   }
 }
