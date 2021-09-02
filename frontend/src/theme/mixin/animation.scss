@@ -1,0 +1,57 @@
+@mixin fade-in-logo {
+  opacity: 0;
+  @include prefix(
+    animation,
+    (
+      fade-in 0.4s $ease-out-soft 0.75s forwards,
+      translate-up-0 0.4s $ease-out-soft 0.75s
+    ),
+    webkit o ms
+  );
+}
+
+@mixin fade-in-link {
+  opacity: 0;
+  @include prefix(
+    animation,
+    (fade-in 0.4s $ease-out-soft forwards, translate-up-25 0.4s $ease-garret),
+    webkit o ms
+  );
+}
+
+@mixin fade-in-more {
+  opacity: 0;
+  @include prefix(
+    animation,
+    (fade-in 0.4s $ease-out-soft forwards, translate-up-0 0.4s $ease-out-soft),
+    webkit o ms
+  );
+}
+
+@mixin tranlate-up-title {
+  @include prefix(
+    animation,
+    (translate-up-0-masked 0.75s $ease-garret forwards),
+    webkit o ms
+  );
+}
+
+@mixin tranlate-down-header {
+  @include prefix(
+    animation,
+    (translate-down-0 0.75s $ease-out-soft forwards),
+    webkit o ms
+  );
+}
+
+@mixin tranlate-up-header {
+  @include prefix(
+    animation,
+    (translate-up-100 0.75s $ease-out-soft forwards),
+    webkit o ms
+  );
+}
+
+@mixin fade-in-navigation {
+  @include prefix(animation, (fade-in 0.5s $ease-out forwards), webkit o ms);
+}

@@ -1,0 +1,136 @@
+.header-section {
+  @include section;
+  background-color: $green;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: calc(1.5rem + 2.5vw) 5.4vw;
+  box-sizing: border-box;
+  transform: translateY(0%);
+  @include tranlate-down-header;
+  &.hide {
+    @include tranlate-up-header;
+  }
+
+  @include desktop {
+    & {
+      padding-top: 50px;
+      padding-bottom: 80px;
+    }
+  }
+}
+
+.header-container {
+  @include container;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  @include fade-in-logo;
+}
+
+.logo-text {
+  @include typo-heading-4;
+  text-transform: uppercase;
+  color: #05386b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu-list {
+  display: none;
+  flex-direction: row;
+  margin-right: 8.4rem;
+  @include desktop_large {
+    display: flex;
+  }
+}
+
+.menu-item {
+  padding: 0 30px;
+  @include fade-in-link;
+  &:nth-child(1) {
+    animation-delay: 0.875s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.9s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.925s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.95s;
+  }
+  &:nth-child(5) {
+    animation-delay: 0.975s;
+  }
+  &:nth-child(6) {
+    animation-delay: 1s;
+  }
+  &:nth-child(7) {
+    animation-delay: 1.025s;
+  }
+}
+
+.menu {
+  font-size: 14px;
+  line-height: 1.6;
+  color: $blue;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.more {
+  @include fade-in-more;
+  animation-delay: 1.1s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  @include desktop {
+    width: 12px;
+  }
+  &:hover {
+    .dot:nth-child(2) {
+      margin: 0 6px;
+      transition: all 0.2s;
+    }
+  }
+  & > .dot {
+    display: none;
+    flex: none;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: $blue;
+    &:nth-child(2) {
+      margin: 0 3px;
+      transition: all 0.2s;
+    }
+    @include desktop_large {
+      display: inline-block;
+    }
+  }
+  & > .text {
+    color: $blue;
+    display: flex;
+    line-height: 5px;
+    font-size: 16px;
+    @include desktop_large {
+      display: none;
+    }
+  }
+}

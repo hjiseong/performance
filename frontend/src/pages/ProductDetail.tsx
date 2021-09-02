@@ -1,7 +1,5 @@
 import React, { ReactElement } from "react";
 
-interface Props {}
-
-export default function ProductDetail({}: Props): ReactElement {
+export default function ProductDetail(): ReactElement {
   return <div></div>;
 }

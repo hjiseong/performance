@@ -1,7 +1,5 @@
 import React, { ReactElement } from "react";
 
-interface Props {}
-
-export default function GameList({}: Props): ReactElement {
+export default function GameList(): ReactElement {
   return <div></div>;
 }
