@@ -11,16 +11,16 @@
 @import "./mixin/media-query.scss";
 @import "./mixin/smooth.scss";
 
-// components
-@import "./components/neon.scss";
-@import "./components/line-link.scss";
+// lib
+@import "./lib/neon.scss";
+@import "./lib/line-link.scss";
 
-// layouts
-@import "./layouts/Footer.scss";
-@import "./layouts/Header.scss";
-@import "./layouts/Loading.scss";
-@import "./layouts/CookieBanner.scss";
-@import "./layouts/Navigation.scss";
+// components
+@import "./components/Footer.scss";
+@import "./components/Header.scss";
+@import "./components/Loading.scss";
+@import "./components/CookieBanner.scss";
+@import "./components/Navigation.scss";
 
 // pages
-@import "../pages/Home.scss";
+@import "./pages/Landing.scss";

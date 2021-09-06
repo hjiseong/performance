@@ -1,8 +1,8 @@
-.smooth-wrapper {
+@mixin smooth-wrapper($padding-top) {
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  padding-top: 140px;
+  padding-top: $padding-top;
 }

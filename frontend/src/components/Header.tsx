@@ -1,11 +1,15 @@
 import React, { ReactElement, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 interface HeaderProps {
   onClickMore: () => void;
 }
 
 export default function Header({ onClickMore }: HeaderProps): ReactElement {
+  const history = useHistory();
+  const path = history.location.pathname;
+  console.log(path);
+
   useEffect(() => {
     const doc = document.documentElement;
     const w = window;
@@ -66,39 +70,50 @@ export default function Header({ onClickMore }: HeaderProps): ReactElement {
           </h1>
           <ul className="menu-list">
             <li className="menu-item">
-              <a className="menu line-link" href="#">
-                work
-              </a>
+              <Link
+                className={`menu line-link ${path === "/" ? "active" : ""}`}
+                to="/"
+              >
+                home
+              </Link>
             </li>
             <li className="menu-item">
-              <a className="menu line-link" href="#">
+              <Link
+                className={`menu line-link ${
+                  path === "/about" ? "active" : ""
+                }`}
+                to="/about"
+              >
                 about
-              </a>
+              </Link>
             </li>
             <li className="menu-item">
-              <a className="menu line-link" href="#">
-                news
-              </a>
-            </li>
-            <li className="menu-item">
-              <a className="menu line-link" href="#">
-                thinking
-              </a>
-            </li>
-            <li className="menu-item">
-              <a className="menu line-link" href="#">
-                pledge
-              </a>
-            </li>
-            <li className="menu-item">
-              <a className="menu line-link" href="#">
+              <Link
+                className={`menu line-link ${
+                  path === "/careers" ? "active" : ""
+                }`}
+                to="/careers"
+              >
                 careers
-              </a>
+              </Link>
             </li>
             <li className="menu-item">
-              <a className="menu line-link" href="#">
+              <Link
+                className={`menu line-link ${
+                  path === "/contact" ? "active" : ""
+                }`}
+                to="/contact"
+              >
                 contact
-              </a>
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link
+                className={`menu line-link ${path === "/blog" ? "active" : ""}`}
+                to="/blog"
+              >
+                blog
+              </Link>
             </li>
           </ul>
           <button className="more" onClick={() => onClickMore()}>

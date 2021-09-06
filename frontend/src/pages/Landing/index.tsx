@@ -5,8 +5,14 @@ import CookieBanner from "@src/components/CookieBanner";
 import Navigation from "@src/components/Navigation";
 import Loading from "@src/components/Loading";
 import useSmooth from "@src/hooks/useSmooth";
+import { Route, Switch } from "react-router-dom";
+import LandingAbout from "./inner/LandingAbout";
+import LandingCareers from "./inner/LandingCareers";
+import LandingContact from "./inner/LandingContact";
+import LandingHome from "./inner/LandingHome";
+import LandingBlog from "./inner/LandingBlog";
 
-export default function Home(): ReactElement {
+export default function Landing(): ReactElement {
   const wrapper = useRef(null);
   const { smoothScroll } = useSmooth({ wrapper });
   const [showLoading, setShowLoading] = useState<boolean>(true);
@@ -48,15 +54,16 @@ export default function Home(): ReactElement {
         <>
           <Header onClickMore={onClickMore} />
           <main className="contents-section smooth-wrapper" ref={wrapper}>
-            <div className="title">
-              <div className="word-1">
-                <span>I AM A</span>
-              </div>
-              <div className="word-2">
-                <span>PROGRAMMER.</span>
-              </div>
-            </div>
-            <div style={{ height: "300vh" }}></div>
+            <Switch>
+              <Route exact path="/" component={LandingHome} />
+              <Route path="/about" component={LandingAbout} />
+              <Route path="/careers" component={LandingCareers} />
+              <Route path="/contact" component={LandingContact} />
+              <Route path="/blog" component={LandingBlog} />
+              <Route>
+                <LandingHome />
+              </Route>
+            </Switch>
           </main>
           <Footer />
         </>
