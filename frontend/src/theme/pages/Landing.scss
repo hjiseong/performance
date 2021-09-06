@@ -26,7 +26,29 @@
 }
 
 .word-2 {
+  @include word(0.7s);
+}
+
+.circle {
+  display: inline-block;
+  width: 4.5vw;
+  height: 4.5vw;
+  min-width: 35px;
+  min-height: 35px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background-color: $blue;
+  margin-right: 0.3em;
+}
+
+.word-3 {
   @include word(0.8s);
+  display: flex;
+  align-items: center;
+}
+
+.word-4 {
+  @include word(0.9s);
 }
 
 .contents-section {
@@ -37,8 +59,8 @@
 .title {
   display: flex;
   flex-direction: column;
-  margin-top: calc(5rem + 5vw);
-  padding-top: 5rem;
+  margin-top: calc(5rem + 2vw);
+  text-transform: uppercase;
 }
 
 .smooth-wrapper {
