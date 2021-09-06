@@ -9,10 +9,8 @@ import { Route, Switch } from "react-router-dom";
 import LandingAbout from "./inner/LandingAbout";
 import LandingCareers from "./inner/LandingCareers";
 import LandingContact from "./inner/LandingContact";
-import LandingNews from "./inner/LandingNews";
-import LandingPledge from "./inner/LandingPledge";
-import LandingThinking from "./inner/LandingThinking";
-import LandingWork from "./inner/LandingWork";
+import LandingHome from "./inner/LandingHome";
+import LandingBlog from "./inner/LandingBlog";
 
 export default function Landing(): ReactElement {
   const wrapper = useRef(null);
@@ -57,14 +55,14 @@ export default function Landing(): ReactElement {
           <Header onClickMore={onClickMore} />
           <main className="contents-section smooth-wrapper" ref={wrapper}>
             <Switch>
-              <Route exact path="/" component={LandingWork} />
-              <Route path="/work" component={LandingWork} />
+              <Route exact path="/" component={LandingHome} />
               <Route path="/about" component={LandingAbout} />
-              <Route path="/news" component={LandingNews} />
-              <Route path="/thinking" component={LandingThinking} />
-              <Route path="/pledge" component={LandingPledge} />
               <Route path="/careers" component={LandingCareers} />
               <Route path="/contact" component={LandingContact} />
+              <Route path="/blog" component={LandingBlog} />
+              <Route>
+                <LandingHome />
+              </Route>
             </Switch>
           </main>
           <Footer />

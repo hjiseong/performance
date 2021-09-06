@@ -71,12 +71,10 @@ export default function Header({ onClickMore }: HeaderProps): ReactElement {
           <ul className="menu-list">
             <li className="menu-item">
               <Link
-                className={`menu line-link ${
-                  path === "/work" || path === "/" ? "active" : ""
-                }`}
-                to="/work"
+                className={`menu line-link ${path === "/" ? "active" : ""}`}
+                to="/"
               >
-                work
+                home
               </Link>
             </li>
             <li className="menu-item">
@@ -87,34 +85,6 @@ export default function Header({ onClickMore }: HeaderProps): ReactElement {
                 to="/about"
               >
                 about
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link
-                className={`menu line-link ${path === "/news" ? "active" : ""}`}
-                to="/news"
-              >
-                news
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link
-                className={`menu line-link ${
-                  path === "/thinking" ? "active" : ""
-                }`}
-                to="/thinking"
-              >
-                thinking
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link
-                className={`menu line-link ${
-                  path === "/pledge" ? "active" : ""
-                }`}
-                to="/pledge"
-              >
-                pledge
               </Link>
             </li>
             <li className="menu-item">
@@ -135,6 +105,14 @@ export default function Header({ onClickMore }: HeaderProps): ReactElement {
                 to="/contact"
               >
                 contact
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link
+                className={`menu line-link ${path === "/blog" ? "active" : ""}`}
+                to="/blog"
+              >
+                blog
               </Link>
             </li>
           </ul>
