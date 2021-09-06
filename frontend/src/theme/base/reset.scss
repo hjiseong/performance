@@ -134,6 +134,7 @@ html {
   font-size: 65%;
   font-variant-ligatures: normal;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 @mixin section {
