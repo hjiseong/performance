@@ -8,7 +8,215 @@
   height: 100vh;
   font-size: 80px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   z-index: 100;
+  color: $white;
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $blue;
+    z-index: 102;
+    @include prefix(
+      animation,
+      (slide-out 0.75s $ease-in-out-hard 0.2s forwards),
+      webkit o ms
+    );
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.nav-header {
+  display: flex;
+  background-color: $blue;
+  width: 100%;
+  padding: calc(1.5rem + 2vw) 7rem;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.nav-close {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  margin-left: auto;
+  font-size: 16px;
+  border: 1px solid $white;
+  background: none;
+  color: $white;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  svg {
+    fill: $white;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+.carousel {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+}
+
+.carousel-container {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-left: 7rem;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+  user-select: none;
+  cursor: none;
+}
+
+.carousel-card {
+  position: relative;
+  flex: none;
+  background-color: $blue;
+  width: 450px;
+  height: 100%;
+  box-sizing: border-box;
+  border-left: 1px solid $white;
+  padding: 0 1rem 15rem;
+  .image {
+    max-height: 375px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      display: block;
+      width: 100%;
+      transform: scale(1.15);
+      transition: all 0.3s;
+      user-select: none;
+    }
+    &:hover img {
+      transform: scale(1);
+      transition: all 0.3s;
+    }
+  }
+}
+
+.carousel-card-number {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  transform: translateY(30px);
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.nav-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 7rem 5rem;
+  font-size: 1.4rem;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  span {
+    opacity: 0.6;
+  }
+}
+
+.cursor {
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  will-change: transform;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.carousel:hover .cursor {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.cursor .circle {
+  display: block;
+  background-color: $white;
+  height: 120px;
+  width: 120px;
+  color: $blue;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: height 0.5s, width 0.5s;
+}
+.cursor .left {
+  opacity: 0;
+  position: absolute;
+  display: inline-block;
+  border-right: 10px solid $white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  transform: translateX(30px);
+  left: 0;
+  transition: all 0.5s;
+}
+.cursor .right {
+  opacity: 0;
+  position: absolute;
+  display: inline-block;
+  border-left: 10px solid $white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  transform: translateX(-30px);
+  right: 0;
+  transition: all 0.5s;
+}
+.cursor.mousedown .circle {
+  height: 75px;
+  width: 75px;
+  color: $white;
+  transition: height 0.5s, width 0.5s;
+}
+.cursor.mousedown .left {
+  opacity: 1;
+  transform: translateX(-10px);
+  transition: all 0.5s;
+}
+.cursor.mousedown .right {
+  opacity: 1;
+  transform: translateX(5px);
+  transition: all 0.5s;
 }
