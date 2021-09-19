@@ -1,5 +1,6 @@
 import useDragScroll from "@src/hooks/useDragScroll";
 import React, { ReactElement, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface Props {
   onClose: () => void;
@@ -69,6 +70,7 @@ export default function Navigation({ onClose }: Props): ReactElement {
           </svg>
         </button>
       </header>
+      <div className="carousel-filter"></div>
       <section className="carousel" ref={wrapper}>
         <div className="cursor" ref={cursorRef}>
           <span className="left"></span>
@@ -131,6 +133,13 @@ export default function Navigation({ onClose }: Props): ReactElement {
             </div>
           </div>
         </div>
+      </section>
+      <section className="compact-nav">
+        <button className="compact-link">home</button>
+        <button className="compact-link">about</button>
+        <button className="compact-link">careers</button>
+        <button className="compact-link">contact</button>
+        <button className="compact-link">blog</button>
       </section>
       <footer className="nav-footer">
         <span>POPO®, inc</span>

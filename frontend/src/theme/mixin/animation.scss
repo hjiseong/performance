@@ -52,6 +52,30 @@
   );
 }
 
+@keyframes fade-in-nav {
+  0% {
+    transform: translateX(20%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@mixin fade-in-carousel {
+  @include prefix(
+    animation,
+    (
+      fade-in 0.5s $ease-out-soft forwards,
+      fade-in-nav 1s $ease-in-soft forwards
+    ),
+    webkit o ms
+  );
+}
+
 @mixin fade-in-navigation {
-  @include prefix(animation, (fade-in 0.5s $ease-out forwards), webkit o ms);
+  @include prefix(
+    animation,
+    (fade-in 0.5s $ease-out-soft forwards),
+    webkit o ms
+  );
 }
