@@ -92,7 +92,10 @@ export default function Navigation({ onClose }: Props): ReactElement {
             </div>
           </span>
         </div>
-        <div className="nav-logo"></div>
+        <div className="nav-logo">
+          POPO
+          <span className="r-round small">®</span>
+        </div>
         <button className="nav-close" onClick={() => onClose()}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.7 11.7">
             <path d="M0,10.6L10.6,0l1.1,1.1L1.1,11.7L0,10.6z"></path>

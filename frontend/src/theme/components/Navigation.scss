@@ -54,9 +54,22 @@
   padding: calc(-0.5rem + 2vw) calc(0.7rem + 2.5vw) calc(1.5rem + 2vw);
   box-sizing: border-box;
   align-items: flex-end;
+  @include mobile {
+    padding: calc(1.5rem + 2vw) calc(2rem + 2.5vw);
+  }
+  @include tablet {
+    padding: calc(1.5rem + 2vw) calc(2rem + 2.5vw);
+  }
 }
 
 .nav-info {
+  display: none;
+  @include desktop {
+    display: block;
+  }
+  @include desktop-large {
+    display: block;
+  }
 }
 
 .nav-dot {
@@ -78,7 +91,15 @@
 }
 
 .nav-logo {
-  display: inline-block;
+  display: none;
+  font-size: 3rem;
+  font-weight: bold;
+  @include mobile {
+    display: inline-block;
+  }
+  @include tablet {
+    display: inline-block;
+  }
 }
 
 .nav-close {
@@ -99,10 +120,12 @@
   @include tablet {
     width: 28px;
     height: 28px;
+    margin-bottom: 0.5rem;
   }
   @include mobile {
     width: 28px;
     height: 28px;
+    margin-bottom: 0.5rem;
   }
   svg {
     fill: $white;
