@@ -26,8 +26,8 @@ export default function useDragScroll({
       ref.current.addEventListener("mousemove", mouseMoveHandler);
       ref.current.addEventListener("mouseup", mouseUpHandler);
       cursorRef.current?.classList.add("mousedown");
-      cursorRef.current.style.top = `${e.clientY - 140 - 60}px`;
-      cursorRef.current.style.left = `${e.clientX - 60}px`;
+      cursorRef.current.style.top = `${e.clientY - 140 - 45}px`;
+      cursorRef.current.style.left = `${e.clientX - 55}px`;
     }
   };
 
@@ -39,8 +39,8 @@ export default function useDragScroll({
     if (ref.current && containerRef.current && cursorRef.current) {
       offset = position.left - dx;
       setLeft(offset * 0.4);
-      cursorRef.current.style.top = `${e.clientY - 140 - 60}px`;
-      cursorRef.current.style.left = `${e.clientX - 60}px`;
+      cursorRef.current.style.top = `${e.clientY - 140 - 45}px`;
+      cursorRef.current.style.left = `${e.clientX - 55}px`;
     }
   };
 
