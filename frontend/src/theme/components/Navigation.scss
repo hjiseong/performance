@@ -32,6 +32,9 @@
   @include desktop {
     display: block;
   }
+  @include desktop-large {
+    display: block;
+  }
 }
 
 @keyframes slide-out {
@@ -47,9 +50,56 @@
   display: flex;
   background-color: $blue;
   width: 100%;
-  padding: calc(1.5rem + 2vw) 7rem;
+  // padding: calc(1.5rem + 2vw) calc(0.7rem + 2.5vw);
+  padding: calc(-0.5rem + 2vw) calc(0.7rem + 2.5vw) calc(1.5rem + 2vw);
   box-sizing: border-box;
-  align-items: center;
+  align-items: flex-end;
+  @include mobile {
+    padding: calc(1.5rem + 2vw) calc(2rem + 2.5vw);
+  }
+  @include tablet {
+    padding: calc(1.5rem + 2vw) calc(2rem + 2.5vw);
+  }
+}
+
+.nav-info {
+  display: none;
+  @include desktop {
+    display: block;
+  }
+  @include desktop-large {
+    display: block;
+  }
+}
+
+.nav-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: $white;
+  border-radius: 50%;
+  margin-right: 3.5rem;
+  margin-bottom: 1.3rem;
+  margin-left: 1.6rem;
+}
+
+.nav-description {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-right: 6.5rem;
+}
+
+.nav-logo {
+  display: none;
+  font-size: 3rem;
+  font-weight: bold;
+  @include mobile {
+    display: inline-block;
+  }
+  @include tablet {
+    display: inline-block;
+  }
 }
 
 .nav-close {
@@ -57,6 +107,7 @@
   width: 36px;
   height: 36px;
   margin-left: auto;
+  margin-bottom: 1rem;
   font-size: 16px;
   border: 1px solid $white;
   background: none;
@@ -66,6 +117,16 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  @include tablet {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.5rem;
+  }
+  @include mobile {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.5rem;
+  }
   svg {
     fill: $white;
     width: 1.6rem;
@@ -74,6 +135,7 @@
 }
 
 .carousel {
+  background-color: #05386b;
   display: none;
   position: relative;
   flex: 1;
@@ -100,7 +162,7 @@
   display: flex;
   width: 100%;
   height: 100%;
-  padding-left: 7rem;
+  padding-left: calc(2rem + 2.5vw);
   padding-bottom: 40px;
   box-sizing: border-box;
   user-select: none;
@@ -111,7 +173,8 @@
   position: relative;
   flex: none;
   background-color: $blue;
-  width: 450px;
+  width: 30vw;
+  max-width: 450px;
   height: 100%;
   box-sizing: border-box;
   border-left: 1px solid $white;
@@ -126,12 +189,12 @@
       display: block;
       width: 100%;
       transform: scale(1.15);
-      transition: all 0.3s;
+      transition: all 0.5s;
       user-select: none;
     }
     &:hover img {
       transform: scale(1);
-      transition: all 0.3s;
+      transition: all 0.5s;
     }
   }
 }
@@ -144,6 +207,73 @@
   transform: translateY(30px);
   font-weight: bold;
   font-size: 12px;
+  z-index: 1000;
+}
+
+.image-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2.5rem;
+  background-color: $blue;
+  transform: translateY(0%);
+  transition: transform 0.5s;
+  height: 240px;
+}
+.carousel-card:hover .image-content {
+  transform: translateY(-50%);
+  transition: transform 0.5s ease-out;
+}
+.image-title {
+  display: flex;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  font-weight: bold;
+
+  & > span:last-child {
+    margin-left: auto;
+  }
+}
+.r-round {
+  vertical-align: top;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-top: 2px;
+}
+.r-round.small {
+  font-size: 0.8rem;
+  margin-top: 1px;
+}
+.image-subtitle {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+.image-description {
+  opacity: 0;
+  font-size: 1.4rem;
+}
+.carousel-card:hover .image-description {
+  opacity: 1;
+  transition: opacity 0.7s ease-out;
+  margin-top: 1rem;
+  line-height: 2rem;
+}
+.image-link {
+  opacity: 0;
+  font-size: 1.4rem;
+  color: $white;
+  font-weight: 500;
+  margin-top: 3rem;
+  position: absolute;
+  left: 2.5rem;
+  bottom: 3rem;
+}
+.carousel-card:hover .image-link {
+  opacity: 1;
+  transition: opacity 0.7s ease-out;
 }
 
 .compact-nav {
@@ -151,7 +281,7 @@
   flex-direction: column;
   width: 100%;
   align-items: flex-start;
-  padding: 0 7rem;
+  padding: 0 calc(2rem + 2.5vw);
   box-sizing: border-box;
   margin-bottom: auto;
   @include desktop {
@@ -172,13 +302,16 @@
   border: none;
   cursor: pointer;
   color: $white;
+  @include mobile {
+    font-size: 1.8rem;
+  }
 }
 
 .nav-footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 3rem 7rem 5rem;
+  padding: 3rem calc(2rem + 2.5vw) calc(0.7rem + 2.5vw);
   font-size: 1.4rem;
   box-sizing: border-box;
   text-transform: uppercase;
@@ -204,11 +337,18 @@
   align-items: center;
   font-weight: bold;
 }
+.cursor.blend {
+  mix-blend-mode: soft-light;
+  .cursor-text {
+    display: none;
+  }
+}
 .carousel:hover .cursor {
   opacity: 1;
   transition: opacity 1s;
 }
 .cursor .circle {
+  background-blend-mode: difference;
   display: block;
   background-color: $white;
   height: 120px;
