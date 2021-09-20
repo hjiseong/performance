@@ -58,11 +58,11 @@ export default function Navigation({ onClose }: Props): ReactElement {
     });
     document.addEventListener("mousemove", (e) => {
       if (cursorRef.current) {
-        cursorRef.current.style.top = `${e.clientY - 140 - 45}px`;
+        cursorRef.current.style.top = `${e.clientY - 140 - 65}px`;
         cursorRef.current.style.left = `${e.clientX - 55}px`;
       }
     });
-    document.querySelectorAll(".image-link").forEach((link) => {
+    document.querySelectorAll(".image-content").forEach((link) => {
       link.addEventListener("mouseover", function (e) {
         document.querySelector(".cursor")?.classList.add("blend");
       });
@@ -75,6 +75,24 @@ export default function Navigation({ onClose }: Props): ReactElement {
   return (
     <div className="navigation">
       <header className="nav-header">
+        <div className="nav-info">
+          <span className="nav-dot"></span>
+          <span className="nav-description">
+            <div>(6) INTERNAL WORKS</div>
+            <div>
+              2021 c/o POPO
+              <span className="r-round small">®</span>
+            </div>
+          </span>
+          <span className="nav-description">
+            <div>A COLLECTION OF INTERNAL PROJECT AND INITIATIVES UNDER</div>
+            <div>
+              THE POPO<span className="r-round small">®</span>
+              BRAND.
+            </div>
+          </span>
+        </div>
+        <div className="nav-logo"></div>
         <button className="nav-close" onClick={() => onClose()}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.7 11.7">
             <path d="M0,10.6L10.6,0l1.1,1.1L1.1,11.7L0,10.6z"></path>
@@ -102,7 +120,9 @@ export default function Navigation({ onClose }: Props): ReactElement {
             </div>
             <div className="image-content">
               <h3 className="image-title">
-                <span>Moves®</span>
+                <span>
+                  Moves<span className="r-round">®</span>
+                </span>
                 <span>©2019</span>
               </h3>
               <div className="image-subtitle">our new hq</div>
@@ -127,7 +147,9 @@ export default function Navigation({ onClose }: Props): ReactElement {
             </div>
             <div className="image-content">
               <h3 className="image-title">
-                <span>Moves®</span>
+                <span>
+                  Moves<span className="r-round">®</span>
+                </span>
                 <span>©2019</span>
               </h3>
               <div className="image-subtitle">our new hq</div>
@@ -152,7 +174,9 @@ export default function Navigation({ onClose }: Props): ReactElement {
             </div>
             <div className="image-content">
               <h3 className="image-title">
-                <span>Moves®</span>
+                <span>
+                  Moves<span className="r-round">®</span>
+                </span>
                 <span>©2019</span>
               </h3>
               <div className="image-subtitle">our new hq</div>
@@ -177,7 +201,9 @@ export default function Navigation({ onClose }: Props): ReactElement {
             </div>
             <div className="image-content">
               <h3 className="image-title">
-                <span>Moves®</span>
+                <span>
+                  Moves<span className="r-round">®</span>
+                </span>
                 <span>©2019</span>
               </h3>
               <div className="image-subtitle">our new hq</div>
@@ -202,7 +228,9 @@ export default function Navigation({ onClose }: Props): ReactElement {
             </div>
             <div className="image-content">
               <h3 className="image-title">
-                <span>Moves®</span>
+                <span>
+                  Moves<span className="r-round">®</span>
+                </span>
                 <span>©2019</span>
               </h3>
               <div className="image-subtitle">our new hq</div>
@@ -227,7 +255,9 @@ export default function Navigation({ onClose }: Props): ReactElement {
             </div>
             <div className="image-content">
               <h3 className="image-title">
-                <span>Moves®</span>
+                <span>
+                  Moves<span className="r-round">®</span>
+                </span>
                 <span>©2019</span>
               </h3>
               <div className="image-subtitle">our new hq</div>
