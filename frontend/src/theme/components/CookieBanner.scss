@@ -1,10 +1,11 @@
 .cookie-banner-section {
   @include section;
+  z-index: 1000;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: $blue;
+  background-color: $blue_dark;
   animation: translate-up-0 0.5s $ease-out-soft;
   &.close {
     animation: translate-down-100 0.5s $ease-out-soft;

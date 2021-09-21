@@ -1,6 +1,5 @@
 .header-section {
   @include section;
-  background-color: $green;
   position: fixed;
   top: 0;
   left: 0;
@@ -9,6 +8,12 @@
   padding: calc(1.5rem + 2.5vw) 5.4vw;
   box-sizing: border-box;
   transform: translateY(0%);
+  background-color: $green;
+  transition: background-color 1s;
+  a {
+    color: $blue;
+    transition: color 1s;
+  }
   @include tranlate-down-header;
   &.hide {
     @include tranlate-up-header;
@@ -41,7 +46,6 @@
 .logo-text {
   @include typo-heading-4;
   text-transform: uppercase;
-  color: #05386b;
   font-weight: bold;
   text-decoration: none;
 }
@@ -84,7 +88,6 @@
 .menu {
   font-size: 14px;
   line-height: 1.6;
-  color: $blue;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -116,9 +119,9 @@
     height: 5px;
     border-radius: 5px;
     background-color: $blue;
+    transition: background-color 1s, margin 0.2s;
     &:nth-child(2) {
       margin: 0 3px;
-      transition: all 0.2s;
     }
     @include desktop_large {
       display: inline-block;
