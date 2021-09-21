@@ -78,9 +78,15 @@ export default function Header({ onClickMore }: HeaderProps): ReactElement {
       <div className="header-container">
         <header className="header">
           <h1 className="logo">
-            <Link className="logo-text" to="/">
+            <a
+              className="logo-text"
+              onClick={(e) => {
+                history.push("/");
+                setNormalTheme();
+              }}
+            >
               popo
-            </Link>
+            </a>
           </h1>
           <ul className="menu-list">
             <li className="menu-item">
