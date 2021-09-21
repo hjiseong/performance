@@ -61,6 +61,7 @@
 
 .menu-item {
   padding: 0 30px;
+  cursor: pointer;
   @include fade-in-link;
   &:nth-child(1) {
     animation-delay: 0.875s;
