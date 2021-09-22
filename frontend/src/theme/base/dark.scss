@@ -1,0 +1,31 @@
+.dark {
+  background-color: $blue;
+  transition: all 1s;
+  .header-section {
+    background-color: $blue;
+    color: $white;
+    transition: all 1s;
+    a {
+      color: $white;
+    }
+    .more .dot {
+      background-color: $white;
+    }
+  }
+  .contents-section {
+    background-color: $blue;
+    color: $white;
+    transition: all 1s;
+    a {
+      color: $white;
+    }
+    .title span,
+    .title span,
+    .title span {
+      color: $white;
+    }
+    .title .circle {
+      background-color: $white;
+    }
+  }
+}

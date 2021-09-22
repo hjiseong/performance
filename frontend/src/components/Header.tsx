@@ -59,61 +59,96 @@ export default function Header({ onClickMore }: HeaderProps): ReactElement {
     window.addEventListener("scroll", checkScroll);
   }, []);
 
+  function setDarkTheme() {
+    const isDark = document.body.classList.contains("dark");
+    if (!isDark) {
+      document.body.classList.add("dark");
+    }
+  }
+
+  function setNormalTheme() {
+    const isDark = document.body.classList.contains("dark");
+    if (isDark) {
+      document.body.classList.remove("dark");
+    }
+  }
+
   return (
     <section className="header-section">
       <div className="header-container">
         <header className="header">
           <h1 className="logo">
-            <Link className="logo-text" to="/">
+            <a
+              className="logo-text"
+              onClick={(e) => {
+                history.push("/");
+                setNormalTheme();
+              }}
+            >
               popo
-            </Link>
+            </a>
           </h1>
           <ul className="menu-list">
             <li className="menu-item">
-              <Link
+              <a
                 className={`menu line-link ${path === "/" ? "active" : ""}`}
-                to="/"
+                onClick={(e) => {
+                  history.push("/");
+                  setNormalTheme();
+                }}
               >
                 home
-              </Link>
+              </a>
             </li>
             <li className="menu-item">
-              <Link
+              <a
                 className={`menu line-link ${
                   path === "/about" ? "active" : ""
                 }`}
-                to="/about"
+                onClick={(e) => {
+                  history.push("/about");
+                  setDarkTheme();
+                }}
               >
                 about
-              </Link>
+              </a>
             </li>
             <li className="menu-item">
-              <Link
+              <a
                 className={`menu line-link ${
                   path === "/careers" ? "active" : ""
                 }`}
-                to="/careers"
+                onClick={(e) => {
+                  history.push("/careers");
+                  setDarkTheme();
+                }}
               >
                 careers
-              </Link>
+              </a>
             </li>
             <li className="menu-item">
-              <Link
+              <a
                 className={`menu line-link ${
                   path === "/contact" ? "active" : ""
                 }`}
-                to="/contact"
+                onClick={(e) => {
+                  history.push("/contact");
+                  setDarkTheme();
+                }}
               >
                 contact
-              </Link>
+              </a>
             </li>
             <li className="menu-item">
-              <Link
+              <a
                 className={`menu line-link ${path === "/blog" ? "active" : ""}`}
-                to="/blog"
+                onClick={(e) => {
+                  history.push("/blog");
+                  setNormalTheme();
+                }}
               >
                 blog
-              </Link>
+              </a>
             </li>
           </ul>
           <button className="more" onClick={() => onClickMore()}>
