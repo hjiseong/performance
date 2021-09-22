@@ -8,10 +8,11 @@
     "build": "craco build",
     "test": "craco test",
     "lint": "eslint \"**/*.{js,ts,tsx}\" --fix",
+    "tsc": "rm -rf dist && tsc --project ./tsconfig.dist.json",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
-    "tsc": "rm -rf dist && tsc --project ./tsconfig.dist.json",
-    "prepare": "husky install"
+    "pre-commit": "lint-staged && echo '[Husky] pre-commit'",
+    "prepare": "cd .. && husky install frontend/.husky"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +31,7 @@
     "prettier": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-intersection-observer": "^8.32.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
     "recoil": "^0.4.0"
