@@ -64,8 +64,8 @@ export default function Landing(): ReactElement {
                 <LandingHome />
               </Route>
             </Switch>
+            <Footer />
           </main>
-          <Footer />
         </>
       )}
       {showCookieBanner && <CookieBanner />}

@@ -1,8 +1,11 @@
 import React, { ReactElement } from "react";
+import { useInView } from "react-intersection-observer";
 
 export default function LandingHome(): ReactElement {
+  // const { ref, inView, entry } = useInView();
+
   return (
-    <>
+    <div className="page-content">
       <div className="title">
         <div className="word-1">
           <span>Pursue</span>
@@ -19,7 +22,9 @@ export default function LandingHome(): ReactElement {
           <span>easier way.</span>
         </div>
       </div>
-      <div style={{ height: "300vh" }}></div>
-    </>
+      <div>
+        <img src="../../../assets/video/storybook.mp4" alt="" />
+      </div>
+    </div>
   );
 }
