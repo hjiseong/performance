@@ -11,17 +11,19 @@ export default function useSmooth({ wrapper }: Props): any {
 
   const root = document.body;
 
-  function smoothScroll() {
-    const scrollWrap = wrapper?.current;
-    if (scrollWrap) {
-      height = scrollWrap.getBoundingClientRect().height - 1;
-    }
-    root.style.height = Math.floor(height) + "px";
+  const scrollWrap = wrapper?.current;
+  if (scrollWrap) {
+    height = scrollWrap.getBoundingClientRect().height - 1;
+  }
+  root.style.height = Math.floor(height) + "px";
 
-    offset += (window.pageYOffset - offset) * speed;
+  function smoothScroll() {
+    const move = Math.floor((window.pageYOffset - offset) * speed);
+    offset += move;
 
     const scroll = "translateY(-" + offset + "px) translateZ(0)";
     if (scrollWrap) {
+      // console.log(offset, height);
       scrollWrap.style.transform = scroll;
     }
 

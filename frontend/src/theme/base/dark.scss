@@ -12,6 +12,14 @@
       background-color: $white;
     }
   }
+  .more {
+    & > .dot {
+      background-color: $white;
+    }
+    & > .text {
+      color: $white;
+    }
+  }
   .contents-section {
     background-color: $blue;
     color: $white;
@@ -27,5 +35,47 @@
     .title .circle {
       background-color: $white;
     }
+  }
+  .footer-section {
+    background-color: #333;
+    color: #fff;
+    color: $blue;
+    background-color: $green;
+    &.bottom {
+      background-color: $green_dark;
+    }
+  }
+  .footer-index {
+    background-color: $green;
+    color: $blue;
+  }
+  .footer-email-input {
+    border-color: $blue;
+    color: $blue;
+    &::placeholder {
+      color: $blue;
+    }
+    &:-ms-input-placeholder {
+      color: $blue;
+    }
+    &::-ms-input-placeholder {
+      color: $blue;
+    }
+  }
+  .footer-email-arrow {
+    fill: $blue;
+  }
+  .footer-index-group {
+    &::before {
+      background-color: $blue;
+    }
+  }
+  .footer-index-item {
+    a {
+      color: $blue !important;
+    }
+  }
+  .part-of-dept {
+    color: $blue !important;
   }
 }

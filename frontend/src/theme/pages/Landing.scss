@@ -54,7 +54,6 @@
 }
 
 .contents-section {
-  padding: calc(1.5rem + 2.5vw) 5.4vw;
   box-sizing: border-box;
   background-color: $green;
   color: $blue;
@@ -63,6 +62,10 @@
     color: $blue;
     transition: color 1s;
   }
+}
+
+.page-content {
+  padding: calc(1.5rem + 2.5vw) 5.4vw;
 }
 
 .title {
