@@ -17,6 +17,7 @@ module.exports = {
     "plugin:prettier/recommended"
   ],
   rules: {
-    "prettier/prettier": 0
+    "prettier/prettier": 0,
+    "comma-dangle": ["error", "never"]
   }
 };
