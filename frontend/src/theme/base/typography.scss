@@ -4,6 +4,12 @@
 // Noto Sans KR - 100, 300, 400, 500, 700, 900
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
+// Broshk (Logo)
+@font-face {
+  font-family: Broshk;
+  src: url(../../assets/fonts/BroshK.woff) format("woff");
+}
+
 // Font List
 $Roboto: "Roboto", sans-serif;
 $Noto-Sans-KR: "Noto Sans KR", sans-serif;
