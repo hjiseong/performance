@@ -44,11 +44,13 @@
 }
 
 .logo-text {
-  @include typo-heading-4;
+  @include typo-heading-3;
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
+  font-family: Broshk, sans-serif;
+  font-weight: normal;
 }
 
 .menu-list {
